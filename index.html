@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./scss/main.css">
+
+    <title>Frontend Mentor | Country Rest Api</title>
+    <script src="https://kit.fontawesome.com/302688582e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="heading">
+            <h1>Where in the world?</h1>
+            <div class="heading__mode" onclick="handleMode()">
+                <span class="darkMode"><i class="fa-solid fa-moon"></i>Dark Mode</span>
+                <span class="lightMode"><i class="fa-solid fa-sun"></i>Light Mode</span>
+            </div>
+        </div> 
+    </header>
+    <main>
+        <section class="inputCategorie">
+            <div class="inputCategorie__iconInput">
+                <div>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <input type="text" placeholder="Search for a country...">
+            </div>
+            <div class="categorie">
+                <div>
+                    <div class="categorie__handle" onclick="handleShow()">
+                        <span>Filter by Region</span> 
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    <ul>
+                        <li>Africa</li>
+                        <li>Americas</li>
+                        <li>Asia</li>
+                        <li>Europe</li>
+                        <li>Oceania</li>
+                    </ul>
+                </div>   
+            </div>
+        </section>
+        <section class="gridContainer">
+
+        </section>
+        <section class="lightBox">
+            <div class="containerButton">
+                <div class="button" onclick="handleDisplayLightBox()">
+                    <i class="fa-solid fa-arrow-left-long"></i>
+                    <span>Back</span>
+                </div>
+            </div>
+            <div class="gridLightBox">
+                <div class="divImg">
+
+                </div>
+                <div class="gridLightBox__information">
+                    <div class="gridLightBox__paragraphe">
+
+                    </div>
+                    <div class="blocBorders">
+                        <span class="lightBoxInformation lightBoxInformation--center ">Border Countries:</span>
+                        <div class="borders">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="preloader">
+            <div class="loader"></div>
+        </div>
+    </main>
+   <script src="./script/index.js"></script>
+</body> 
+</html>

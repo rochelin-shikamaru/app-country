@@ -1,0 +1,76 @@
+header{
+    height: 78px;
+    box-shadow: 0 0 5px $firstGray;
+    
+    .heading{
+        width: 95%;
+        height: 100%;
+        margin-inline: auto;
+        @include flexbox ($justify: space-between);
+        h1{
+            font-size: 1.3rem;
+        }
+        span{
+            font-weight: $font-regular;
+        }
+        .lightMode{
+            display: none;
+            cursor: pointer;
+            .fa-sun{
+                color: $white;
+            }
+        }
+        .darkMode{
+            cursor: pointer;
+        }
+        .fa-moon,
+        .fa-sun{
+            margin-right: 5px;
+        }
+    }
+}
+// add toggle light and dark colors, background
+
+.moonLight{
+    background-color: $secondBlue;
+    color: $white;
+    header,
+    .inputCategorie__iconInput div,
+    .categorie__handle,
+    .container{
+        background-color: $firstBlue;
+    }
+    input{
+        background-color: $firstBlue;
+        color: $white;
+    }
+    .categorie div ul{
+        background-color: $firstBlue;
+        @include shadowRadius ($firstGray:hsl(207, 26%, 17%), $thidGray:hsl(207, 26%, 17%));
+    }
+
+    header{
+        box-shadow: 0 0 5px $secondBlue;
+
+    }
+    .inputCategorie__iconInput{
+      @include shadowRadius ($firstGray:hsl(207, 26%, 17%), $thidGray:hsl(207, 26%, 17%));
+    }
+    .categorie div{
+        @include shadowRadius ($firstGray:hsl(207, 26%, 17%), $thidGray:hsl(207, 26%, 17%));
+    }
+    .container{
+        @include shadowRadius ($firstGray:hsl(207, 26%, 17%), $thidGray:hsl(207, 26%, 17%));
+    }
+   .lightBox{
+    background-color: $secondBlue;
+        .button{
+            @include shadowRadius ($firstGray:hsl(208, 23%, 22%), $thidGray:hsl(208, 23%, 22%));
+        }
+        .spanBorders{
+            background-color: $firstBlue;
+            @include shadowRadius ($firstGray:hsl(207, 26%, 17%), $thidGray:hsl(207, 26%, 17%));
+        }
+   }
+   
+}

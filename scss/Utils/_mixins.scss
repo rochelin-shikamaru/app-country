@@ -1,0 +1,13 @@
+@mixin flexbox ($justify: center, $align: center, $direction: row){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    
+}
+
+@mixin shadowRadius ($firstGray:hsl(0, 0%, 52%), $thidGray:rgba(245, 245, 245, 0.5)) {
+    border-radius: 5px;
+        box-shadow: 0 0 4px $firstGray,
+                    0 0 4px $thidGray;   
+}

@@ -1,0 +1,269 @@
+.inputCategorie{
+    //border: 1px solid red;
+    width: Min(95%, 1278px);
+    margin: 40px auto;
+    @include flexbox($justify: space-between);
+    &__iconInput{
+      //  border: 1px solid green;
+        @include shadowRadius;
+        width: 480px;
+        height: 50px;
+        display: flex;
+        div{
+            width: 50px;
+            height: 100%;
+            @include flexbox;
+        }
+        input{
+            width: calc(100% - 50px);
+            border: none;
+            font-weight: $font-medium;
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+}
+
+.categorie {
+    div{
+        position: relative;
+        width: 198px;
+        height: 50px;
+        @include shadowRadius;
+        @include flexbox($justify: none);
+        .categorie__handle{
+            cursor: pointer;
+            justify-content: space-between;
+        }
+        span{
+            padding-left: 15px;
+        }
+        .fa-angle-down{
+            margin-right: 20px;
+        }
+        ul{
+            position: absolute;
+            top: 55px;
+            @include shadowRadius;
+            width: 100%;
+            background-color: $white;
+            min-height: 100%;
+            list-style: none;
+            padding-left: 15px;
+            z-index: 2;
+            display: none;
+            li{
+                margin: 5px 0;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.active{
+    
+    .fa-angle-down{
+           rotate: (-180deg); 
+    }
+}
+
+// section grid container
+.gridContainer{
+    width: Min(95%, 1278px);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(Min(265px, 100%), 1fr));
+    grid-auto-rows: 331px;
+    gap: 2rem;
+  //  border: 1px solid red;
+}
+
+/// container item child grid
+.container{
+    @include shadowRadius;
+    border-radius: 5px;
+    &__img{
+        width: 100%;
+        height: 157px;
+        img{
+            width: 100%;
+            height: 100%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+    }
+    &__information{
+        width: 100%;
+        height: calc(100% - 157px);
+        padding: 10px 0 10px 15px;
+    //    border: 1px solid red;
+        .container__img--weight{
+            font-weight: $font-medium;
+            margin: 2px 0;
+            display: inline-block;
+        }
+        h3{
+            margin: 10px 0;
+            
+        }
+    }
+}
+
+// section lightbox 
+.lightBox{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color:  $white;
+    width: 100%;
+    min-height: calc(100% - 78px);
+    z-index: 5;
+    display: none;
+    .containerButton{
+        width: Min(95%, 1278px);
+        margin: 79px auto;
+    }
+    .button{
+        width: 136px;
+        padding-inline: 20px;
+        height: 38px;
+        @include shadowRadius;
+        @include flexbox ($justify: space-evenly);
+        cursor: pointer;
+        i{
+            display: inline-block;
+            
+        }
+
+    }
+}
+///grid lightbox
+.gridLightBox{
+    width: Min(95%, 1278px);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(Min(400px, 100%), 1fr));
+    grid-auto-rows: 400px;
+    gap: 2rem;
+}
+
+/// divImg style
+.divImg{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
+}
+
+/// lightBoxInformation
+.lightBoxInformation{
+    font-weight: $font-medium;
+    display: inline-block;
+    margin: 3px 0;
+    &--center{
+        @include flexbox;
+    }
+}
+.lightBox--name{
+    display: inline-block;
+    font-size: 2rem;
+    margin: 19px 0;
+    font-weight: $font-bold;
+}
+
+.gridLightBox__information{
+    padding-left: 30px;
+
+    .gridLightBox__paragraphe{
+        display: flex;
+        justify-content: space-between;
+    }
+    p:nth-child(2){
+        margin-top: 80px;
+    }
+    
+}
+
+.blocBorders{
+    display: flex;
+    margin-top: 60px;
+    .spanBorders{
+        display: inline-block;
+        padding: 5px;
+        min-width: 80px;
+        text-align: center;
+        background-color: $white;
+        @include shadowRadius;
+        margin: 5px;
+    }
+}
+
+@media only screen and (max-width: 876px){
+    .gridLightBox{
+        grid-auto-rows: unset;
+    }
+    .gridLightBox__information{
+        padding-left: 0;
+        .gridLightBox__paragraphe{
+            flex-direction: column;
+        }
+        p:nth-child(2){
+            margin-top: 30px;
+        }
+        
+    }
+
+    .blocBorders{
+        flex-direction: column;
+        margin-top: 30px;
+        
+    }
+    .lightBoxInformation--center{
+        justify-content: unset;
+    }
+}
+@media screen and (max-width: 768px) {
+    .inputCategorie{
+        flex-direction: column;
+        justify-content: unset;
+        align-items: unset;
+        &__iconInput{
+            width: Min(95%,485px);
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.preloader{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include flexbox;
+
+    .loader {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        border: 11.5px solid;
+        border-color: #dbdcef;
+        border-right-color: #202c37;
+        animation: spinner 1s infinite linear;
+     }
+}
+ 
+ @keyframes spinner {
+    to {
+       transform: rotate(1turn);
+    }
+ }
